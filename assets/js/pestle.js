@@ -2,7 +2,6 @@
 load_data(query = '', page_number = 1);
 
 function load_data(query = '', page_number = 1) {
-    console.log("Hello");
 
     var form_data = new FormData();
 
@@ -64,7 +63,7 @@ $(document).ready(function () {
         event.preventDefault();
         var action = 'searchRecord';
         var title = $('#record').val();
-        // alert(title);
+
         if (record !== '') {
             $.ajax({
                 url: "http://localhost/blackCoffer/api/table.php",
@@ -73,12 +72,11 @@ $(document).ready(function () {
                 data: { action: action, title: title },
                 success: function (data) {
 
-                    // console.log('data',data)
                     if (data.status === 200) {
                         // Clear the existing list
                         $('#post-list').empty();
                         // Append the new data
-                        // console.log('yath',data.data)
+
                         $.each(data.data, function (index, row) {
 
                             const date = new Date(row.end_year);
@@ -141,7 +139,7 @@ function initializeTopicDropdown(pestles) {
     const topicDropdown = document.querySelector('.dropdown-menu-pestle');
 
     if (pestles && pestles.data && pestles.data.length > 0) {
-        pestles.data.forEach((pestle) => { // Use topics.data here
+        pestles.data.forEach((pestle) => { 
             const listItem = document.createElement('li');
             listItem.style.color = '#333';
             listItem.style.fontSize = '12px';
@@ -178,8 +176,7 @@ $(document).ready(function () {
         $.each($("input[name='pestle']:checked"), function () {
             arr.push($(this).val());
         });
-        // alert(arr);
-        // console.log(arr);
+       
         if (record !== '') {
             $.ajax({
                 url: "http://localhost/blackCoffer/api/table.php",

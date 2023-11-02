@@ -6,9 +6,7 @@ $(document).ready(function () {
         success: function (data) {
 
             if (data.status === 200) {
-            //    console.log(data.totalcounts)
-            //    console.log(typeof(data.totalcounts))
-
+                
                const topicsCount = data.totalcounts.distinct_topic_count;
                const sectorsCount = data.totalcounts.distinct_sector_count;
                const regionsCount = data.totalcounts.distinct_region_count;

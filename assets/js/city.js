@@ -2,7 +2,6 @@
 load_data(query = '', page_number = 1);
 
 function load_data(query = '', page_number = 1) {
-    console.log("Hello");
 
     var form_data = new FormData();
 
@@ -64,7 +63,7 @@ $(document).ready(function () {
         event.preventDefault();
         var action = 'searchRecord';
         var title = $('#record').val();
-        // alert(title);
+
         if (record !== '') {
             $.ajax({
                 url: "http://localhost/blackCoffer/api/table.php",
@@ -73,12 +72,10 @@ $(document).ready(function () {
                 data: { action: action, title: title },
                 success: function (data) {
 
-                    // console.log('data',data)
                     if (data.status === 200) {
                         // Clear the existing list
                         $('#post-list').empty();
                         // Append the new data
-                        // console.log('yath',data.data)
                         $.each(data.data, function (index, row) {
 
                             const date = new Date(row.end_year);
@@ -141,7 +138,7 @@ function initializeTopicDropdown(cities) {
     const topicDropdown = document.querySelector('.dropdown-menu-city');
 
     if (cities && cities.data && cities.data.length > 0) {
-        cities.data.forEach((city) => { // Use topics.data here
+        cities.data.forEach((city) => { 
             const listItem = document.createElement('li');
             listItem.style.color = '#333';
             listItem.style.fontSize = '12px';
@@ -178,8 +175,7 @@ $(document).ready(function () {
         $.each($("input[name='city']:checked"), function () {
             arr.push($(this).val());
         });
-        // alert(arr);
-        // console.log(arr);
+        
         if (record !== '') {
             $.ajax({
                 url: "http://localhost/blackCoffer/api/table.php",

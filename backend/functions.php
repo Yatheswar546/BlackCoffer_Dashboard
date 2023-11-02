@@ -275,7 +275,7 @@
                 header("HTTP/1.0 500 Internal Server Error");
             }
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data); 
         } catch (PDOException $e) {
             $data = [
                 'status' => 500,
@@ -283,7 +283,7 @@
             ];
             header("HTTP/1.0 500 Database Error");
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data); 
         }
     }
 
@@ -363,7 +363,7 @@
                 header("HTTP/1.0 500 Internal Server Error");
             }
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data); 
         } catch (PDOException $e) {
             $data = [
                 'status' => 500,
@@ -371,7 +371,7 @@
             ];
             header("HTTP/1.0 500 Database Error");
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data); 
         }
     }
 
@@ -452,7 +452,7 @@
                 header("HTTP/1.0 500 Internal Server Error");
             }
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data); 
         } catch (PDOException $e) {
             $data = [
                 'status' => 500,
@@ -460,7 +460,7 @@
             ];
             header("HTTP/1.0 500 Database Error");
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data);  
         }
     }
 
@@ -540,7 +540,7 @@
                 header("HTTP/1.0 500 Internal Server Error");
             }
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data);  
         } catch (PDOException $e) {
             $data = [
                 'status' => 500,
@@ -548,7 +548,7 @@
             ];
             header("HTTP/1.0 500 Database Error");
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data); 
         }
     }
 
@@ -627,7 +627,7 @@
                 header("HTTP/1.0 500 Internal Server Error");
             }
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data);  
         } catch (PDOException $e) {
             $data = [
                 'status' => 500,
@@ -635,7 +635,7 @@
             ];
             header("HTTP/1.0 500 Database Error");
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data);  
         }
     }
 
@@ -714,7 +714,7 @@
                 header("HTTP/1.0 500 Internal Server Error");
             }
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data);  
         } catch (PDOException $e) {
             $data = [
                 'status' => 500,
@@ -722,7 +722,7 @@
             ];
             header("HTTP/1.0 500 Database Error");
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data);  
         }
     }
 
@@ -802,7 +802,7 @@
                 header("HTTP/1.0 500 Internal Server Error");
             }
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data);  
         } catch (PDOException $e) {
             $data = [
                 'status' => 500,
@@ -810,7 +810,7 @@
             ];
             header("HTTP/1.0 500 Database Error");
     
-            return json_encode($data); // Return the JSON response after setting headers
+            return json_encode($data); 
         }
     }
 

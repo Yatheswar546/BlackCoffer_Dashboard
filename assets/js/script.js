@@ -1,8 +1,6 @@
 /////////////////////// VIEW COMPLETE DETAILS /////////////////////////////
 $(document).on('click', '#viewTableButton', function () {
     var id = $(this).data('val');
-    // alert(id);
-    console.log(id);
     var action = 'viewRecord';
 
     $.ajax({
@@ -11,7 +9,7 @@ $(document).on('click', '#viewTableButton', function () {
         data: { action: action, id: id },
         success: function (data) {
             if (data.status === 200) {
-                // console.log(data.data)
+
                 var dataList = data.data;
 
                 var listHtml = '<ul>';

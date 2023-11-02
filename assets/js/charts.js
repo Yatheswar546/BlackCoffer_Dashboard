@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                // Add any other headers you might need
             },
         })
             .then((response) => response.json())
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to initialize charts using the fetched data
     function initializeCharts(data) {
-        // Extract data from 'data' object and initialize your charts here
 
         /////////////////// Intensity Graph ///////////////////
         if (data.action === 'intensities') {
@@ -117,9 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const topics = data.topics;
             const likelihood = data.likelihood;
 
-            // console.log(topics)
-            // console.log(likelihood)
-
             const likelihoodChart = document.getElementById('likelihood');
 
             new Chart(likelihoodChart, {
@@ -193,8 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     regionCounts.push(regionData.count);
                 });
 
-                // console.log(typeof(regions))
-                // console.log(regionCounts)
             }
 
             const regionChart = document.getElementById('regions');
@@ -247,13 +240,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 $.getJSON(myGeoJSONPath, function (geojsonData) {
                     // var map = L.map('map').setView([39.74739, -105], 4);
 
-                    // console.log(L.version)
-
                     var geoJsonLayer = L.geoJson(geojsonData, {
                         clickable: false,
                         style: function (feature) {
 
-                            // Check a property of the GeoJSON feature to determine if it should be highlighted
                             const countryName = feature.properties.sovereignt;
 
                             if (countriesData.includes(countryName)) {

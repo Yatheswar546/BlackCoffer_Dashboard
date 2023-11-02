@@ -57,7 +57,6 @@
                 <h1 style="font-size: 25px; text-align: center; padding: 10px;">Countries</h1>
                 <div>
                     <div id="map" style="width: 100%; height: 500px"></div>
-                    <!-- <div id="map"></div> -->
                 </div>
             </div>
 
