@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .then((response) => response.json())
             .then((data) => {
-                callback(data); 
+                callback(data);
             })
             .catch((error) => console.error('Error:', error));
     }
@@ -242,24 +242,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 var myGeoJSONPath = 'mymap.geo.json';
 
-                $.getJSON(myGeoJSONPath,function(geojsonData){
-                    var map = L.map('map').setView([39.74739, -105], 4);
-                    
+                var map = L.map('map');
+
+                $.getJSON(myGeoJSONPath, function (geojsonData) {
+                    // var map = L.map('map').setView([39.74739, -105], 4);
+
                     // console.log(L.version)
 
-                    L.geoJson(geojsonData, {
+                    var geoJsonLayer = L.geoJson(geojsonData, {
                         clickable: false,
                         style: function (feature) {
-                            // Check a property of the GeoJSON feature to determine if it should be highlighted
 
+                            // Check a property of the GeoJSON feature to determine if it should be highlighted
                             const countryName = feature.properties.sovereignt;
 
                             if (countriesData.includes(countryName)) {
-                                return { 
-                                    fillColor: 'blue', 
-                                    fillOpacity: 0.4, 
-                                    weight: 2, 
-                                    color: 'blue' };
+                                return {
+                                    fillColor: 'grey',
+                                    fillOpacity: 0.4,
+                                    weight: 2,
+                                    color: 'grey'
+                                };
                             } else {
                                 return {
                                     fillColor: '#fff',
@@ -268,24 +271,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                 };
                             }
                         },
-                        onEachFeature: function (feature, layer) {
-                            layer.on('mouseover', function () {
-                                if (highlighted) {
-                                    geojson.resetStyle(highlighted);
-                                }
-                                layer.setStyle({
-                                    fillColor: 'blue',
-                                    fillOpacity: 0.6,
-                                    weight: 2,
-                                    color: 'blue'
-                                });
-                                highlighted = layer;
-                            });
-                            layer.on('mouseout', function () {
-                                geojson.resetStyle(layer);
-                            });
-                        }
                     }).addTo(map);
+
+                    // Calculate the bounding box
+                    var bounds = geoJsonLayer.getBounds();
+
+                    // Set the initial view to cover the entire bounding box
+                    map.fitBounds(bounds);
                 })
 
 

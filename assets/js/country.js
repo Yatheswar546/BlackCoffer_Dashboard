@@ -96,7 +96,7 @@ $(document).ready(function () {
                                     <td>${row.country}</td>
                                     <td>${formattedDate}</td>
                                     <td>
-                                        <button type="button" data-val="${row.id}" class="btn btn-primary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
+                                        <button type="button" data-val="${row.id}" class="btn btn-secondary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
                                             <i class="fa-regular fa-eye" style="font-size: 15px;"></i> View
                                         </button>
                                     </td>
@@ -210,7 +210,7 @@ $(document).ready(function () {
                                     <td>${row.country}</td>
                                     <td>${formattedDate}</td>
                                     <td>
-                                        <button type="button" data-val="${row.id}" class="btn btn-primary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
+                                        <button type="button" data-val="${row.id}" class="btn btn-secondary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
                                             <i class="fa-regular fa-eye" style="font-size: 15px;"></i> View
                                         </button>
                                     </td>

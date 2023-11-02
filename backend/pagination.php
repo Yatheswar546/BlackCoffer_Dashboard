@@ -38,7 +38,7 @@
     	
         while ($row = $statement2->fetch(PDO::FETCH_ASSOC))
     	{
-            $buttonHtml =   "<button type='button' data-val='{$row['id']}' class='btn btn-primary' id='viewTableButton' data-bs-toggle='modal' data-bs-target='#viewTable'>
+            $buttonHtml =   "<button type='button' data-val='{$row['id']}' class='btn btn-secondary' id='viewTableButton' data-bs-toggle='modal' data-bs-target='#viewTable'>
                                 <i class='fa-regular fa-eye' style='font-size: 15px;'></i>View
                             </button>";
     		$data[] = array(
@@ -127,7 +127,7 @@
     		{
     			$page_link .= '
     			<li class="page-item active">
-    	      		<a class="page-link" href="#">'.$page_array[$count].' <span class="sr-only">(current)</span></a>
+    	      		<a class="page-link" href="#" style="background-color: var(--main)">'.$page_array[$count].' <span class="sr-only">(current)</span></a>
     	    	</li>
     			';
 
@@ -135,7 +135,7 @@
 
     			if($previous_id > 0)
     			{
-    				$previous_link = '<li class="page-item"><a class="page-link" href="javascript:load_data(`'.$_POST["query"].'`, '.$previous_id.')">Previous</a></li>';
+    				$previous_link = '<li class="page-item"><a class="page-link" href="javascript:load_data(`'.$_POST["query"].'`, '.$previous_id.')" style="color: var(--main)">Previous</a></li>';
     			}
     			else
     			{
@@ -159,7 +159,7 @@
     			else
     			{
     				$next_link = '
-    				<li class="page-item"><a class="page-link" href="javascript:load_data(`'.$_POST["query"].'`, '.$next_id.')">Next</a></li>
+    				<li class="page-item"><a class="page-link" href="javascript:load_data(`'.$_POST["query"].'`, '.$next_id.')" style="color: var(--main)">Next</a></li>
     				';
     			}
 
@@ -170,7 +170,7 @@
     			{
     				$page_link .= '
     				<li class="page-item disabled">
-    	          		<a class="page-link" href="#">...</a>
+    	          		<a class="page-link" href="#" style="color: var(--main)">...</a>
     	      		</li>
     				';
     			}
@@ -178,7 +178,7 @@
     			{
     				$page_link .= '
     				<li class="page-item">
-    					<a class="page-link" href="javascript:load_data(`'.$_POST["query"].'`, '.$page_array[$count].')">'.$page_array[$count].'</a>
+    					<a class="page-link" href="javascript:load_data(`'.$_POST["query"].'`, '.$page_array[$count].')" style="color: var(--main)">'.$page_array[$count].'</a>
     				</li>
     				';
     			}

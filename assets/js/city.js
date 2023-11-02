@@ -5,14 +5,14 @@ function load_data(query = '', page_number = 1) {
     console.log("Hello");
 
     var form_data = new FormData();
- 
+
     form_data.append('query', query);
 
     form_data.append('page', page_number);
 
     var ajax_request = new XMLHttpRequest();
 
-    ajax_request.open('POST', '../../backend/pagination.php'); 
+    ajax_request.open('POST', '../../backend/pagination.php');
 
     ajax_request.send(form_data);
 
@@ -97,7 +97,7 @@ $(document).ready(function () {
                                     <td>${row.city}</td>
                                     <td>${formattedDate}</td>
                                     <td>
-                                        <button type="button" data-val="${row.id}" class="btn btn-primary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
+                                        <button type="button" data-val="${row.id}" class="btn btn-secondary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
                                             <i class="fa-regular fa-eye" style="font-size: 15px;"></i> View
                                         </button>
                                     </td>
@@ -209,7 +209,7 @@ $(document).ready(function () {
                                     <td>${row.city}</td>
                                     <td>${formattedDate}</td>
                                     <td>
-                                        <button type="button" data-val="${row.id}" class="btn btn-primary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
+                                        <button type="button" data-val="${row.id}" class="btn btn-secondary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
                                             <i class="fa-regular fa-eye" style="font-size: 15px;"></i> View
                                         </button>
                                     </td>

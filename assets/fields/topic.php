@@ -38,11 +38,6 @@
             <div class="content">
                 <h2 class="page-title">Topics</h2>
 
-                <!-- View button for Testing -->
-                <!-- <button type="button" data-val="${row.id}" class="btn btn-primary" id="viewTableButton" data-bs-toggle="modal" data-bs-target="#viewTable">
-                    <i class="fa-regular fa-eye" style="font-size: 15px;"></i> View
-                </button> -->
-
                 <!-- TABLE PART -->
                 <div class="row">
 
@@ -79,7 +74,7 @@
                                                 style="padding: 0px 0px 0px 30px; overflow-y: auto; height: 250px; width: 300px;">
                                                 <!-- Apply Button -->
                                                 <div class="modal-footer" style="margin-top: 10px; margin-right: 10px;">
-                                                    <button class="btn btn-primary btn-sm" type="submit"
+                                                    <button class="btn btn-secondary btn-sm" type="submit"
                                                         id="findTopics">
                                                         Apply
                                                     </button>
